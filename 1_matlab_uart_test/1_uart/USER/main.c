@@ -53,10 +53,10 @@ int main(void)
 			system_sta &= ~uart_send_flag;
 			for (i = 0; i < 4096; i++)
 			{
-				USART_SendData(USART1, a[i]);
-				while (USART_GetFlagStatus(USART1, USART_FLAG_TC) == RESET);
-				USART_SendData(USART1, a[i]>>8);
-				while (USART_GetFlagStatus(USART1, USART_FLAG_TC) == RESET);
+				USART_SendData(UART4, a[i]);
+				while (USART_GetFlagStatus(UART4, USART_FLAG_TC) == RESET);
+				USART_SendData(UART4, a[i]>>8);
+				while (USART_GetFlagStatus(UART4, USART_FLAG_TC) == RESET);
 			}
 		}
 		else
